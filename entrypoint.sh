@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd functions; npm install
+cd functions; npm install; npm run build
 
 pwd
 
@@ -13,6 +13,7 @@ if [ -z "${FIREBASE_PROJECT}" ]; then
     echo "FIREBASE_PROJECT is missing"
     exit 1
 fi
+
 
 firebase deploy \
     -m "${GITHUB_REF} (${GITHUB_SHA})" \
